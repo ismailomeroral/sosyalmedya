@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbFestegramModelStoreContainer" CdmEntityContainer="DbFestegramEntities1">
+    <EntitySetMapping Name="tbl_geribildirim">
+      <EntityTypeMapping TypeName="DbFestegramModel.tbl_geribildirim">
+        <MappingFragment StoreEntitySet="tbl_geribildirim">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="tip" ColumnName="tip" />
+          <ScalarProperty Name="gonderen" ColumnName="gonderen" />
+          <ScalarProperty Name="bildirim" ColumnName="bildirim" />
+          <ScalarProperty Name="sil_id" ColumnName="sil_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_gyorum">
+      <EntityTypeMapping TypeName="DbFestegramModel.tbl_gyorum">
+        <MappingFragment StoreEntitySet="tbl_gyorum">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kullanici_ad" ColumnName="kullanici_ad" />
+          <ScalarProperty Name="post" ColumnName="post" />
+          <ScalarProperty Name="gonderen" ColumnName="gonderen" />
+          <ScalarProperty Name="yorum" ColumnName="yorum" />
+          <ScalarProperty Name="sil_id" ColumnName="sil_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_kullanici">
+      <EntityTypeMapping TypeName="DbFestegramModel.tbl_kullanici">
+        <MappingFragment StoreEntitySet="tbl_kullanici">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kullanici_ad" ColumnName="kullanici_ad" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="eposta" ColumnName="eposta" />
+          <ScalarProperty Name="gonderisayi" ColumnName="gonderisayi" />
+          <ScalarProperty Name="takipci" ColumnName="takipci" />
+          <ScalarProperty Name="takip" ColumnName="takip" />
+          <ScalarProperty Name="profilfoto" ColumnName="profilfoto" />
+          <ScalarProperty Name="biografi" ColumnName="biografi" />
+          <ScalarProperty Name="sil_id" ColumnName="sil_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_kullanicigönderi">
+      <EntityTypeMapping TypeName="DbFestegramModel.tbl_kullanicigönderi">
+        <MappingFragment StoreEntitySet="tbl_kullanicigönderi">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kullanici_ad" ColumnName="kullanici_ad" />
+          <ScalarProperty Name="post" ColumnName="post" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="sil_id" ColumnName="sil_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_takip">
+      <EntityTypeMapping TypeName="DbFestegramModel.tbl_takip">
+        <MappingFragment StoreEntitySet="tbl_takip">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="takipeden" ColumnName="takipeden" />
+          <ScalarProperty Name="takipedilen" ColumnName="takipedilen" />
+          <ScalarProperty Name="sil_id" ColumnName="sil_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

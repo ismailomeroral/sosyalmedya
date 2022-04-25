@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DbFestegramModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_geribildirim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kullanici_id" Type="int" />
+          <Property Name="tip" Type="varchar" MaxLength="20" />
+          <Property Name="gonderen" Type="varchar" MaxLength="50" />
+          <Property Name="bildirim" Type="varchar" MaxLength="1000" />
+          <Property Name="sil_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_gyorum">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kullanici_ad" Type="varchar" MaxLength="50" />
+          <Property Name="post" Type="varchar" MaxLength="500" />
+          <Property Name="gonderen" Type="varchar" MaxLength="50" />
+          <Property Name="yorum" Type="varchar" MaxLength="200" />
+          <Property Name="sil_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_kullanici">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kullanici_ad" Type="varchar" MaxLength="50" />
+          <Property Name="sifre" Type="varchar" MaxLength="20" />
+          <Property Name="eposta" Type="varchar" MaxLength="100" />
+          <Property Name="gonderisayi" Type="int" />
+          <Property Name="takipci" Type="int" />
+          <Property Name="takip" Type="int" />
+          <Property Name="profilfoto" Type="varchar" MaxLength="500" />
+          <Property Name="biografi" Type="varchar" MaxLength="300" />
+          <Property Name="sil_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_kullanicigönderi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kullanici_ad" Type="varchar" MaxLength="50" />
+          <Property Name="post" Type="varchar" MaxLength="500" />
+          <Property Name="aciklama" Type="varchar" MaxLength="200" />
+          <Property Name="sil_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_takip">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="takipeden" Type="varchar" MaxLength="50" />
+          <Property Name="takipedilen" Type="varchar" MaxLength="50" />
+          <Property Name="sil_id" Type="int" />
+        </EntityType>
+        <EntityContainer Name="DbFestegramModelStoreContainer">
+          <EntitySet Name="tbl_geribildirim" EntityType="Self.tbl_geribildirim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_gyorum" EntityType="Self.tbl_gyorum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_kullanici" EntityType="Self.tbl_kullanici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_kullanicigönderi" EntityType="Self.tbl_kullanicigönderi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_takip" EntityType="Self.tbl_takip" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbFestegramModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_geribildirim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kullanici_id" Type="Int32" />
+          <Property Name="tip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="gonderen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bildirim" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="sil_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_gyorum">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kullanici_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="post" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="gonderen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="yorum" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="sil_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_kullanici">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kullanici_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="eposta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="gonderisayi" Type="Int32" />
+          <Property Name="takipci" Type="Int32" />
+          <Property Name="takip" Type="Int32" />
+          <Property Name="profilfoto" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="biografi" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="sil_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_kullanicigönderi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kullanici_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="post" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="aciklama" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="sil_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_takip">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="takipeden" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="takipedilen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sil_id" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="DbFestegramEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_geribildirim" EntityType="Self.tbl_geribildirim" />
+          <EntitySet Name="tbl_gyorum" EntityType="Self.tbl_gyorum" />
+          <EntitySet Name="tbl_kullanici" EntityType="Self.tbl_kullanici" />
+          <EntitySet Name="tbl_kullanicigönderi" EntityType="Self.tbl_kullanicigönderi" />
+          <EntitySet Name="tbl_takip" EntityType="Self.tbl_takip" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbFestegramModelStoreContainer" CdmEntityContainer="DbFestegramEntities1">
+          <EntitySetMapping Name="tbl_geribildirim">
+            <EntityTypeMapping TypeName="DbFestegramModel.tbl_geribildirim">
+              <MappingFragment StoreEntitySet="tbl_geribildirim">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+                <ScalarProperty Name="tip" ColumnName="tip" />
+                <ScalarProperty Name="gonderen" ColumnName="gonderen" />
+                <ScalarProperty Name="bildirim" ColumnName="bildirim" />
+                <ScalarProperty Name="sil_id" ColumnName="sil_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_gyorum">
+            <EntityTypeMapping TypeName="DbFestegramModel.tbl_gyorum">
+              <MappingFragment StoreEntitySet="tbl_gyorum">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="kullanici_ad" ColumnName="kullanici_ad" />
+                <ScalarProperty Name="post" ColumnName="post" />
+                <ScalarProperty Name="gonderen" ColumnName="gonderen" />
+                <ScalarProperty Name="yorum" ColumnName="yorum" />
+                <ScalarProperty Name="sil_id" ColumnName="sil_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_kullanici">
+            <EntityTypeMapping TypeName="DbFestegramModel.tbl_kullanici">
+              <MappingFragment StoreEntitySet="tbl_kullanici">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="kullanici_ad" ColumnName="kullanici_ad" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="eposta" ColumnName="eposta" />
+                <ScalarProperty Name="gonderisayi" ColumnName="gonderisayi" />
+                <ScalarProperty Name="takipci" ColumnName="takipci" />
+                <ScalarProperty Name="takip" ColumnName="takip" />
+                <ScalarProperty Name="profilfoto" ColumnName="profilfoto" />
+                <ScalarProperty Name="biografi" ColumnName="biografi" />
+                <ScalarProperty Name="sil_id" ColumnName="sil_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_kullanicigönderi">
+            <EntityTypeMapping TypeName="DbFestegramModel.tbl_kullanicigönderi">
+              <MappingFragment StoreEntitySet="tbl_kullanicigönderi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="kullanici_ad" ColumnName="kullanici_ad" />
+                <ScalarProperty Name="post" ColumnName="post" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="sil_id" ColumnName="sil_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_takip">
+            <EntityTypeMapping TypeName="DbFestegramModel.tbl_takip">
+              <MappingFragment StoreEntitySet="tbl_takip">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="takipeden" ColumnName="takipeden" />
+                <ScalarProperty Name="takipedilen" ColumnName="takipedilen" />
+                <ScalarProperty Name="sil_id" ColumnName="sil_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

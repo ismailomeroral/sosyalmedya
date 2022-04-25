@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbFestegramModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_geribildirim">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullanici_id" Type="Int32" />
+    <Property Name="tip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="gonderen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bildirim" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="sil_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_gyorum">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullanici_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="post" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="gonderen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="yorum" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="sil_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_kullanici">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullanici_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="eposta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="gonderisayi" Type="Int32" />
+    <Property Name="takipci" Type="Int32" />
+    <Property Name="takip" Type="Int32" />
+    <Property Name="profilfoto" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="biografi" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="sil_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_kullanicigönderi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullanici_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="post" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="aciklama" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="sil_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_takip">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="takipeden" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="takipedilen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sil_id" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="DbFestegramEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_geribildirim" EntityType="Self.tbl_geribildirim" />
+    <EntitySet Name="tbl_gyorum" EntityType="Self.tbl_gyorum" />
+    <EntitySet Name="tbl_kullanici" EntityType="Self.tbl_kullanici" />
+    <EntitySet Name="tbl_kullanicigönderi" EntityType="Self.tbl_kullanicigönderi" />
+    <EntitySet Name="tbl_takip" EntityType="Self.tbl_takip" />
+  </EntityContainer>
+</Schema>
